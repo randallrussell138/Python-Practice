@@ -1,12 +1,17 @@
 import cv2
+import os
 
-#if wanted to ask user to input there own photo
+#*if wanted to ask user to input there own photo*
 #IMAGE_NAME = (input("Enter image file name and extension: "))
 #IMAGE_LOCATION = input("Enter img location (i.e. C:/Users/Tico/Desktop/) ")
 #img_location = IMAGE_LOCATION
 #filename = IMAGE_NAME
 
+
+
 #location of the image 
+
+#img_location = 'C:/Users/Tico/Desktop/'
 img_location = 'C:/Users/Tico/Desktop/'
 
 #file name for the image with extension
