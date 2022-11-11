@@ -1,41 +1,37 @@
+import PySimpleGUI as sg
 import cv2
+sg.theme("DarkTeal2")
+layout = [[sg.T("")], [sg.Text("Choose a file: "), sg.Input(), sg.FileBrowse(key="-IN-")],[sg.Button("See Pencil Sketch")]]
 
-#*if wanted to ask user to input there own photo*
-#IMAGE_NAME = (input("Enter image file name and extension: "))
-#IMAGE_LOCATION = input("Enter img location (i.e. C:/Users/Tico/Desktop/) ")
-#img_location = IMAGE_LOCATION
-#filename = IMAGE_NAME
+###Building Window
+window = sg.Window('Pencil Sketch', layout, size=(600,150))
+    
+while True:
+    event, values = window.read()
+    if event == sg.WIN_CLOSED or event=="Exit":
+        break
+    elif event == "See Pencil Sketch":
+        #print(values["-IN-"])
+        img = values["-IN-"]
+        img = cv2.imread(img)
 
+        #convert img to gray scale
+        gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
+        #invert img
+        inverted_gray_image = 255 - gray_image
 
-#location of the image 
+        #blur image by gaussians function
+        blurred_img = cv2.GaussianBlur(inverted_gray_image, (21,21), 0)
 
-#img_location = 'C:/Users/Tico/Desktop/'
-img_location = 'C:/Users/rjrus/Downloads/'
+        #invert the blurred img
+        inverted_blurred_img = 255 - blurred_img
 
-#file name for the image with extension
-filename = 'mushroom.jfif'
-
-#read in the image
-img = cv2.imread(img_location+filename)
-
-#convert img to gray scale
-gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-#invert img
-inverted_gray_image = 255 - gray_image
-
-#blur image by gaussians function
-blurred_img = cv2.GaussianBlur(inverted_gray_image, (21,21), 0)
-
-#invert the blurred img
-inverted_blurred_img = 255 - blurred_img
-
-#create pencil sketch
-pencil_sketch_img = cv2.divide(gray_image, inverted_blurred_img, scale=256.0)
+        #create pencil sketch
+        pencil_sketch_img = cv2.divide(gray_image, inverted_blurred_img, scale=256.0)
 
 
-cv2.imshow('Original Image', img)
-cv2.imshow('New Image', pencil_sketch_img)
+        cv2.imshow('Original Image', img)
+        cv2.imshow('New Image', pencil_sketch_img)
 
-cv2.waitKey(0)
+        cv2.waitKey(0)
