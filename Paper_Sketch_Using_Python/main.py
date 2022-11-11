@@ -5,7 +5,7 @@ sg.theme("DarkTeal2")
 layout = [[sg.Text("Instructions:")],[sg.Text("Browse and pick an image file. Then just push submit to see to see the code draw")],[sg.Text("in a pencil-like sketch. Just close images and select a new image to try again!")],[sg.Text("Choose an image file: "), sg.Input(), sg.FileBrowse(key="-IN-")],[sg.Button("See Pencil Sketch")],[sg.Text("Instructions:")]]
 
 ###Building Window
-window = sg.Window('Pencil Sketch', layout, size=(600,150))
+window = sg.Window('Pencil Sketch Drawer GUI', layout, size=(600,150))
     
 while True:
     event, values = window.read()
