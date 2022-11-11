@@ -1,5 +1,4 @@
 import cv2
-import os
 
 #*if wanted to ask user to input there own photo*
 #IMAGE_NAME = (input("Enter image file name and extension: "))
@@ -12,7 +11,7 @@ import os
 #location of the image 
 
 #img_location = 'C:/Users/Tico/Desktop/'
-img_location = 'C:/Users/Tico/Desktop/'
+img_location = 'C:/Users/rjrus/Downloads/'
 
 #file name for the image with extension
 filename = 'mushroom.jfif'
