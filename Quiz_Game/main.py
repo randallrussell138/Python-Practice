@@ -2,7 +2,7 @@ print("Welcome to my computer quiz!")
 
 playing = input("Do you want to play? (Y/N) ")
 # .lower changes answer to lowercase so all casing will work
-if playing != "y":
+if playing.lower() != "y":
     quit()
 
 print("Okay lets play :)")
@@ -20,7 +20,7 @@ def score_statement() :
 
 #question 0
 answer = input("What does CPU stand for? ")
-if answer.lower == "central processing unit":
+if answer.lower() == "central processing unit":
     print("Correct!")
     point += 1
 else:
@@ -30,7 +30,7 @@ score_statement()
 
 #question 1
 answer = input("What does GPU stand for? ")
-if answer.lower == "graphic processing unit":
+if answer.lower() == "graphic processing unit":
     print("Correct!")
     point += 1
 else:
@@ -40,7 +40,7 @@ score_statement()
 
 #question 2
 answer = input("What does PSU stand for? ")
-if answer.lower == "power supply":
+if answer.lower() == "power supply":
     print("Correct!")
     point += 1
 else:
@@ -50,7 +50,7 @@ score_statement()
 
 #question 3
 answer = input("What does RAM stand for? ")
-if answer.lower == "random access memory":
+if answer.lower() == "random access memory":
     print("Correct!")
     point += 1
 else:
