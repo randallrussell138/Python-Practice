@@ -18,6 +18,23 @@ def score_statement() :
     print("You got "+ str(percentage_correct)+ "% correct!")
     return 
 
+
+def question_statement(question, correct_Answer):
+    temp_answer= ""
+    temp_answer = input(question)
+    if temp_answer.lower() == correct_Answer:
+        print("Correct!")
+        return True
+    else:
+        print("Incorrect!")
+        return False 
+
+#temp question
+if question_statement("My name? " , "randall") :
+    point += 1
+question +=1
+score_statement()
+
 #question 0
 answer = input("What does CPU stand for? ")
 if answer.lower() == "central processing unit":
