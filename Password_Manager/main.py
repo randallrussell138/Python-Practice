@@ -13,8 +13,9 @@ def load_key():
     file.close()
     return key
 
-master_pwd = ("What is master password? ")
-key = load_key() + master_pwd.encode()
+#write_key()
+
+key = load_key()
 fer = Fernet(key)
 
 
