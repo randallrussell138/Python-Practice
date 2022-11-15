@@ -18,7 +18,7 @@ while True:
 
         #convert img to gray scale
         gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
+        
         #invert img
         inverted_gray_image = 255 - gray_image
 
