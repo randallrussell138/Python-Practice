@@ -2,7 +2,7 @@ print("Welcome to my computer quiz!")
 
 playing = input("Do you want to play? (Y/N) ")
 # .lower changes answer to lowercase so all casing will work
-if playing.lower != "y":
+if playing != "y":
     quit()
 
 print("Okay lets play :)")
@@ -15,7 +15,7 @@ def score_statement() :
     # str() changes int to str to put into print for joining words.
     print("You got ",str(point)," points")
     percentage_correct = (point/question) *100
-    print("You got"+ str(percentage_correct)+ "% correct!")
+    print("You got "+ str(percentage_correct)+ "% correct!")
     return 
 
 #question 0
