@@ -2,7 +2,7 @@ print("Welcome to my computer quiz!")
 
 playing = input("Do you want to play? (Y/N) ")
 
-if playing != "Y":
+if playing.lower != "Y":
     quit()
 
 print("Okay lets play :)")
@@ -19,43 +19,7 @@ def score_statement() :
 
 answer = input("What does CPU stand for? ")
 
-if answer == "Central Processing Unit":
-    print("Correct!")
-    point += 1
-else:
-    print("Incorrect!")
-
-question += 1
-
-score_statement()
-
-def score_statement() :
-    print("You got ",int(point)," points")
-    percentage_correct = (point/question) *100
-    print(percentage_correct)
-    return 
-
-answer = input("What does CPU stand for? ")
-
-if answer == "Central Processing Unit":
-    print("Correct!")
-    point += 1
-else:
-    print("Incorrect!")
-
-question += 1
-
-score_statement()
-
-def score_statement() :
-    print("You got ",int(point)," points")
-    percentage_correct = (point/question) *100
-    print(percentage_correct)
-    return 
-
-answer = input("What does CPU stand for? ")
-
-if answer == "Central Processing Unit":
+if answer.lower == "central processing unit":
     print("Correct!")
     point += 1
 else:
