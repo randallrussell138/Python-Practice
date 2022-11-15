@@ -20,7 +20,6 @@ def score_statement() :
 
 
 def question_statement(question, correct_Answer):
-    temp_answer= ""
     temp_answer = input(question)
     if temp_answer.lower() == correct_Answer:
         print("Correct!")
@@ -33,44 +32,29 @@ def question_statement(question, correct_Answer):
 if question_statement("My name? " , "randall") :
     point += 1
 question +=1
-score_statement()
+
 
 #question 0
-answer = input("What does CPU stand for? ")
-if answer.lower() == "central processing unit":
-    print("Correct!")
+if question_statement("What does CPU stand for? " , "central processing unit") :
     point += 1
-else:
-    print("Incorrect!")
-question += 1
-score_statement()
+question +=1
+
 
 #question 1
-answer = input("What does GPU stand for? ")
-if answer.lower() == "graphic processing unit":
-    print("Correct!")
+if question_statement("What does GPU stand for? " , "graphic processing unit") :
     point += 1
-else:
-    print("Incorrect!")
-question += 1
-score_statement()
+question +=1
 
 #question 2
-answer = input("What does PSU stand for? ")
-if answer.lower() == "power supply":
-    print("Correct!")
+if question_statement("What does PSU stand for? " , "power supply") :
     point += 1
-else:
-    print("Incorrect!")
-question += 1
-score_statement()
+question +=1
 
 #question 3
-answer = input("What does RAM stand for? ")
-if answer.lower() == "random access memory":
-    print("Correct!")
+if question_statement("What does RAM stand for? " , "random access memory") :
     point += 1
-else:
-    print("Incorrect!")
-question += 1
+question +=1
+
 score_statement()
+
+input ("Play Again? (Y/N) ")
